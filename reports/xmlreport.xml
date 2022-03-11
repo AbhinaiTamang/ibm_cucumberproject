@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="2" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="7" time="102.4072">
+<testcase classname="verify order" name="verify login" time="13.350877">
+<system-out><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+Then verify user is in dashboard............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="verify order" name="verify order" time="11.377617">
+<system-out><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+And clicks on orders........................................................passed
+Then verify user is on the orders section...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="verify order" name="verify customer details in database" time="13.911421">
+<system-out><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+And user click order........................................................passed
+When user enters "599","2022-02-18","Krishna Mohan","1110","2022-02-18" and order status.passed
+And clicks on filter........................................................passed
+Then verify a particular order is shown.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="verify order" name="verify view after a particular order is shown" time="15.603118">
+<system-out><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+When user click on order....................................................passed
+And enter order details"599","2022-02-18","Krishna Mohan","1110","2022-02-18"and order status.passed
+When clicks onfilter button.................................................passed
+And clicks on view..........................................................passed
+Then verify  order details and customer details is shown....................passed
+]]></system-out>
+</testcase>
+<testcase classname="verify order" name="verify delete button after a particular order is shown" time="13.588581">
+<system-out><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+When user will click on order and enters order details"599","2022-02-18","Krishna Mohan","1110","2022-02-18"and order status.passed
+And user click on filter button.............................................passed
+And user click on delete after result is shown..............................passed
+Then verify validation message..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="verify order" name="verify edit button after a particular order is shown" time="21.621001">
+<failure message="junit.framework.AssertionFailedError: continue button is not working&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:57)&#13;&#10;&#9;at stepdefinition.orderstepdefinition.verify_it_is_edited_or_not(orderstepdefinition.java:279)&#13;&#10;&#9;at ✽.verify it is edited or not(file:src/test/java/features/order.feature:54)&#13;&#10;"><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+When user click on order and enter order details"599","2022-02-18","Krishna Mohan","1110","2022-02-18"and order status.passed
+And user clicks on filter button............................................passed
+When user clicks on edit after result is shown..............................passed
+Then verify user is in edit page............................................passed
+And enter details to be changed.............................................passed
+Then verify it is edited or not.............................................failed
+
+StackTrace:
+junit.framework.AssertionFailedError: continue button is not working
+	at junit.framework.Assert.fail(Assert.java:57)
+	at stepdefinition.orderstepdefinition.verify_it_is_edited_or_not(orderstepdefinition.java:279)
+	at ✽.verify it is edited or not(file:src/test/java/features/order.feature:54)
+]]></failure>
+</testcase>
+<testcase classname="verify order" name="verify add new order button" time="12.954585">
+<failure message="junit.framework.AssertionFailedError: continue button is not working&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:57)&#13;&#10;&#9;at stepdefinition.orderstepdefinition.user_clicks_on_continue_and_verify_added_or_not(orderstepdefinition.java:363)&#13;&#10;&#9;at ✽.user clicks on continue and verify added or not(file:src/test/java/features/order.feature:63)&#13;&#10;"><![CDATA[Given user is in application................................................passed
+When user enters "admin" and "Admin@123"....................................passed
+And user click on login.....................................................passed
+When user enters dashboard and clicks order.................................passed
+And clicks on add new button and enter customer details"Abhinai","Tamang","9735181764","abhi@gmail.com".passed
+Then user clicks on continue and verify added or not........................failed
+
+StackTrace:
+junit.framework.AssertionFailedError: continue button is not working
+	at junit.framework.Assert.fail(Assert.java:57)
+	at stepdefinition.orderstepdefinition.user_clicks_on_continue_and_verify_added_or_not(orderstepdefinition.java:363)
+	at ✽.user clicks on continue and verify added or not(file:src/test/java/features/order.feature:63)
+]]></failure>
+</testcase>
+</testsuite>
